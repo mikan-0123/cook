@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 950px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #1a5276;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .menu-cell {
+            background-color: #fcfcfc;
+            width: 22%;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+
+        .menu-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .sub-name {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .dish-img {
+            width: 120px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #eee;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #1a5276;
+        }
+
+        .calculation {
+            font-size: 0.85em;
+            color: #d35400;
+            font-family: 'Courier New', Courier, monospace;
+            display: block;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        .check-mark {
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .none-text {
+            color: #999;
+            font-style: italic;
+        }
+
+        .toggle-container {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .toggle-container label {
+            font-size: 1em;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .toggle-container input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleCalculations() {
+            const checkbox = document.getElementById('showCalculations');
+            const calculations = document.querySelectorAll('.calculation');
+            calculations.forEach(calc => {
+                calc.style.display = checkbox.checked ? 'block' : 'none';
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="table-container">
+        <div class="toggle-container">
+            <label>
+                <input type="checkbox" id="showCalculations" onchange="toggleCalculations()" checked>
+                計算式を表示する
+            </label>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Menu</th>
+                    <th>Buy in Indonesia (x15)</th>
+                    <th>Bring from Japan (x15)</th>
+                    <th>Person in Charge (Japan)</th>
+                    <th>Members in Charge</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img"
+                            style="background: url('https://www.sirogohan.com/recipe/oyakodon/main.jpg') center/cover;">
+                        </div>
+                        <div class="menu-name">Oyakodon</div>
+                        <div class="sub-name">(親子丼)</div>
+                        <div style="margin-top: 8px;"><a href="https://recipe.rakuten.co.jp/recipe/1110018610/" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Chicken thighs</span> — 25
+                                pieces<br><span class="calculation">(0.5 &times; 50 &times; 0.5 = 25)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Onions (small)</span> — 25
+                                onions<br><span class="calculation">(0.5 &times; 50 &times; 0.5 = 25)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Eggs</span> — 37.5
+                                eggs<br><span class="calculation">(1.5 &times; 50 &times; 0.5 = 37.5)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Rice</span> — 2,500 g (2.5 kg)<br><span class="calculation">(100 g &times; 50 &times; 0.5 = 2,500 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Soy sauce</span> — 25
+                                tbsp<br><span class="calculation">(1 tbsp &times; 50 &times; 0.5 = 25 tbsp)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Sugar</span> — 25
+                                tbsp (325 g)<br><span class="calculation">(1 tbsp &times; 50 &times; 0.5 = 25 tbsp → 25 &times; 13 g = 325 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Salt</span></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Dashi stock</span> — 12.5 tsp (25 g)<br><span
+                                    class="calculation">(0.5 tsp &times; 50 &times; 0.5 = 12.5 tsp → 12.5 &times; 2 g = 25 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #1a5276; font-weight: bold;">ちゅうがん きょうへい Kyohei</span>: Dashi stock (25 g)</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">藤本真央</span><br><span style="color: #d35400; font-weight: bold;">いまがわ(Rioto)</span><br><span style="color: #1a5276; font-weight: bold;">nonoka</span><br><span style="color: #1a5276; font-weight: bold;">因幡の白兔(Naoki)</span><br><span style="color: #d35400; font-weight: bold;">Shouki</span><br><span style="color: #27ae60; font-weight: bold;">かんちゃん</span></td>
+                </tr>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img"
+                            style="background: url('https://www.kurashiru.com/recipe_cards/382/original.jpg') center/cover;">
+                        </div>
+                        <div class="menu-name">Miso Soup</div>
+                        <div class="sub-name">(味噌汁)</div>
+                        <div style="margin-top: 8px;"><a href="https://www.kurashiru.com/recipes/56bf7c69-703f-4f91-96ce-77723daae258" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td><span class="none-text">(None)</span></td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Dried sardines
+                                    (niboshi)</span> — 125 g<br><span class="calculation">(5 g &times; 50 &times; 0.5 = 125 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Miso</span> — 25 tbsp (450 g)<br><span class="calculation">(1 tbsp &times; 50 &times; 0.5 = 25 tbsp → 25 &times; 18 g = 450 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #1a5276; font-weight: bold;">ちゅうがん きょうへい Kyohei</span>: Dried sardines (125 g)<br><span style="color: #1a5276; font-weight: bold;">宮谷健太</span>: Miso (450 g)<br><span style="color: #d35400; font-weight: bold;">いくと</span>: 五平餅の材料担当</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">ちゅうがん きょうへい Kyohei</span><br><span style="color: #1a5276; font-weight: bold;">宮谷健太</span><br><span style="color: #d35400; font-weight: bold;">いくと</span></td>
+                </tr>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img"
+                            style="background: url('https://image.excite.co.jp/jp/erecipe/recipe/e/9/e969019688be18d4076e012e87399061/8885b57f896b015f8e58f2735741870a.jpeg') center/cover;">
+                        </div>
+                        <div class="menu-name">Oshiruko</div>
+                        <div class="sub-name">(お汁粉)</div>
+                        <div style="margin-top: 8px;"><a href="https://www.kurashiru.com/recipes/80e1b3f3-3f25-4ecd-a849-d4561f2e8a6d" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td><span class="none-text">(None)</span></td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Shiratamako</span> (glutinous
+                                rice flour) — 1,000 g (1.0 kg)<br><span class="calculation">(40 g &times; 50 &times; 0.5 = 1,000 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Sweet red bean paste</span>
+                                (anko) — 2,500 g (2.5 kg)<br><span class="calculation">(100 g &times; 50 &times; 0.5 = 2,500 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #1a5276; font-weight: bold;">由貴</span>: Shiratamako (~300-333 g)<br><span style="color: #1a5276; font-weight: bold;">Noa</span>: Shiratamako (~300-333 g)<br><span style="color: #1a5276; font-weight: bold;">もこ</span>: Shiratamako (~300-333 g)<br><span style="font-size: 0.85em; color: #666;">※切りが悪かったら約300gでもいいです</span><br><br><span style="color: #1a5276; font-weight: bold;">藤本真央</span>: あんこ (400 g)<br><span style="color: #d35400; font-weight: bold;">いまがわ(Rioto)</span>: あんこ (400 g)<br><span style="color: #1a5276; font-weight: bold;">nonoka</span>: あんこ (400 g)<br><span style="color: #1a5276; font-weight: bold;">因幡の白兔(Naoki)</span>: あんこ (400 g)<br><span style="color: #d35400; font-weight: bold;">Shouki</span>: あんこ (400 g)<br><span style="color: #27ae60; font-weight: bold;">かんちゃん</span>: あんこ (400 g)</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">由貴</span><br><span style="color: #1a5276; font-weight: bold;">Noa</span><br><span style="color: #1a5276; font-weight: bold;">もこ</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
