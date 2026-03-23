@@ -1,211 +1,232 @@
 <!DOCTYPE html>
-<html lang="ja">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マルタ大学留学 1年間の費用まとめ</title>
+<!-- saved from url=(0034)https://mikan-0123.github.io/cook/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px;
-            margin: 0 auto;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
             padding: 20px;
         }
 
-        h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-        }
-
-        h3 {
-            color: #2980b9;
-            margin-top: 30px;
-        }
-
-        p {
-            font-size: 0.95em;
-            color: #555;
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 950px;
         }
 
         table {
-            border-collapse: collapse;
             width: 100%;
-            margin-bottom: 25px;
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        th,
-        td {
-            border: 1px solid #e0e0e0;
-            padding: 12px;
-            text-align: left;
+            border-collapse: collapse;
         }
 
         th {
-            background-color: #f8f9fa;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        tr:nth-child(even) {
-            background-color: #fcfcfc;
-        }
-
-        .highlight {
-            background-color: #e8f4f8;
-            font-weight: bold;
-        }
-
-        .total-row {
-            background-color: #fff3cd;
-            font-weight: bold;
-        }
-
-        .note-box {
-            background-color: #fdf2e9;
-            border-left: 5px solid #e67e22;
+            background-color: #1a5276;
+            color: white;
             padding: 15px;
-            margin-top: 30px;
-            border-radius: 0 4px 4px 0;
+            text-align: left;
+            font-size: 1.1em;
         }
 
-        .note-box ul {
-            margin-bottom: 0;
-            padding-left: 20px;
+        td {
+            padding: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
         }
 
-        .room-image {
+        .menu-cell {
+            background-color: #fcfcfc;
+            width: 22%;
+            text-align: center;
+            border-right: 1px solid #eee;
+        }
+
+        .menu-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        .sub-name {
+            font-size: 0.85em;
+            color: #666;
+        }
+
+        .dish-img {
+            width: 120px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #eee;
+            margin: 0 auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #1a5276;
+        }
+
+        .calculation {
+            font-size: 0.85em;
+            color: #d35400;
+            font-family: 'Courier New', Courier, monospace;
             display: block;
-            margin-top: 8px;
-            width: 160px;
-            max-width: 100%;
-            border-radius: 6px;
+            margin-left: 18px;
+            font-weight: bold;
+        }
+
+        .check-mark {
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .none-text {
+            color: #999;
+            font-style: italic;
+        }
+
+        .toggle-container {
+            text-align: center;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .toggle-container label {
+            font-size: 1em;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .toggle-container input[type="checkbox"] {
+            margin-right: 8px;
+            cursor: pointer;
         }
     </style>
+    <script>
+        function toggleCalculations() {
+            const checkbox = document.getElementById('showCalculations');
+            const calculations = document.querySelectorAll('.calculation');
+            calculations.forEach(calc => {
+                calc.style.display = checkbox.checked ? 'block' : 'none';
+            });
+        }
+    </script>
 </head>
 
 <body>
 
-    <h2>マルタ大学留学：1年間の費用まとめ（寮費＋生活費）</h2>
-    <p>※1ヶ月はひと月あたりの平均（30日）、1年は365日で計算しています。<br>
-        ※為替レート目安：1ユーロ ＝ 184.3円（2026年3月現在）</p>
-
-    <h3>項目別 費用内訳</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>項目</th>
-                <th>詳細・備考</th>
-                <th>1ヶ月の目安 (€)</th>
-                <th>1ヶ月の目安 (円)</th>
-                <th>1年間の目安 (€)</th>
-                <th>1年間の目安 (円)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>寮費①</strong><br>専用バスルーム</td>
-                <td>画像のお部屋 (€31.00/泊)<br><img class="room-image"
-                        src="https://cdn-docs.sirvoy.com/images/room_type/36720/5ea3900a-f16a-49f4-b61f-eca68197e8d1_thumb?t=1667888681&amp;v=2"
-                        alt="高いほうの寮（専用バスルーム）の部屋画像"></td>
-                <td>€930</td>
-                <td>約17.1万円</td>
-                <td class="highlight">€11,315</td>
-                <td class="highlight">約208.5万円</td>
-            </tr>
-            <tr>
-                <td><strong>寮費②</strong><br>共有バスルーム</td>
-                <td>画像のお部屋 (€27.00/泊)<br><img class="room-image"
-                        src="https://cdn-docs.sirvoy.com/images/room_type/36720/5ea3900a-f16a-49f4-b61f-eca68197e8d1_thumb?t=1667888681&amp;v=2"
-                        alt="安いほうの寮（共有バスルーム）の部屋画像"></td>
-                <td>€810</td>
-                <td>約14.9万円</td>
-                <td class="highlight">€9,855</td>
-                <td class="highlight">約181.6万円</td>
-            </tr>
-            <tr>
-                <td><strong>食費</strong></td>
-                <td>自炊中心＋たまに外食</td>
-                <td>€250〜350</td>
-                <td>約4.6万〜6.5万円</td>
-                <td>€3,000〜4,200</td>
-                <td>約55.3万〜77.4万円</td>
-            </tr>
-            <tr>
-                <td><strong>交通費</strong></td>
-                <td>バス移動メイン (学生カード利用)</td>
-                <td>€20〜40</td>
-                <td>約3,700〜7,400円</td>
-                <td>€240〜480</td>
-                <td>約4.4万〜8.8万円</td>
-            </tr>
-            <tr>
-                <td><strong>通信費</strong></td>
-                <td>現地スマホSIM代</td>
-                <td>€15〜25</td>
-                <td>約2,800〜4,600円</td>
-                <td>€180〜300</td>
-                <td>約3.3万〜5.5万円</td>
-            </tr>
-            <tr>
-                <td><strong>交際費他</strong></td>
-                <td>日用品・娯楽・交際費</td>
-                <td>€100〜200</td>
-                <td>約1.8万〜3.7万円</td>
-                <td>€1,200〜2,400</td>
-                <td>約22.1万〜44.2万円</td>
-            </tr>
-            <tr class="total-row">
-                <td colspan="2">生活費小計 (寮費を含む)</td>
-                <td>€1,195〜1,545</td>
-                <td>約22.0万〜28.5万円</td>
-                <td>€14,475〜18,695</td>
-                <td>約266.8万〜344.6万円</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>1年間の総合計（寮費 ＋ 生活費）の目安</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>選択するお部屋タイプ</th>
-                <th>1年間の総額目安 (€)</th>
-                <th>1年間の総額目安 (円)</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>専用バスルーム (€31/泊) の場合</strong></td>
-                <td>約 €15,935 〜 €18,695</td>
-                <td><strong>約 293万円 〜 344万円</strong></td>
-            </tr>
-            <tr>
-                <td><strong>共有バスルーム (€27/泊) の場合</strong></td>
-                <td>約 €14,475 〜 €17,235</td>
-                <td><strong>約 266万円 〜 317万円</strong></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <div class="note-box">
-        <strong>💡 マルタ大学公式ページからの重要情報と補足</strong>
-        <ul>
-            <li><strong>公式寮情報URL:</strong> <a href="https://www.um.edu.mt/international/students/accommodation/"
-                    target="_blank"
-                    rel="noopener noreferrer">https://www.um.edu.mt/international/students/accommodation/</a></li>
-            <li><strong>ビザ手続きの利便性:</strong> マルタ大学は、ビザ（e-Residence Permit）申請の遅延や書類トラブルを防ぐため、キャンパス隣接の公式レジデンス「Campus
-                Hub」の利用を強く推奨しています。個人でアパートを契約すると審査が厳格になり、手続きが難航するリスクがあります。</li>
-            <li><strong>含まれていない費用:</strong> 上記の表には、日本からの往復航空券代（約15〜25万円）、海外留学生保険料、大学の学費（授業料）は含まれていません。</li>
-        </ul>
+    <div class="table-container">
+        <div class="toggle-container">
+            <label>
+                <input type="checkbox" id="showCalculations" onchange="toggleCalculations()" checked="">
+                計算式を表示する
+            </label>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Menu</th>
+                    <th>Buy in Indonesia (x15)</th>
+                    <th>Bring from Japan (x15)</th>
+                    <th>買う担当</th>
+                    <th>料理担当</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img" style="background: url(&#39;https://www.sirogohan.com/recipe/oyakodon/main.jpg&#39;) center/cover;">
+                        </div>
+                        <div class="menu-name">Oyakodon</div>
+                        <div class="sub-name">(親子丼)</div>
+                        <div style="margin-top: 8px;"><a href="https://recipe.rakuten.co.jp/recipe/1110018610/" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Chicken thighs</span> — 25
+                                pieces<br><span class="calculation">(0.5 × 50 × 0.5 = 25)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Onions (small)</span> — 25
+                                onions<br><span class="calculation">(0.5 × 50 × 0.5 = 25)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Eggs</span> — 37.5
+                                eggs<br><span class="calculation">(1.5 × 50 × 0.5 = 37.5)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Rice</span> — 2,500 g (2.5 kg)<br><span class="calculation">(100 g × 50 × 0.5 = 2,500 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Soy sauce</span> — 25
+                                tbsp<br><span class="calculation">(1 tbsp × 50 × 0.5 = 25 tbsp)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Sugar</span> — 25
+                                tbsp (325 g)<br><span class="calculation">(1 tbsp × 50 × 0.5 = 25 tbsp → 25 × 13 g = 325 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Salt</span></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Dashi stock</span> — 12.5 tsp (25 g)<br><span class="calculation">(0.5 tsp × 50 × 0.5 = 12.5 tsp → 12.5 × 2 g = 25 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #d35400; font-weight: bold;">いまがわ(Rioto)</span>: Dashi stock (25 g)</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">藤本真央</span><br><span style="color: #d35400; font-weight: bold;">いまがわ(Rioto)</span><br><span style="color: #1a5276; font-weight: bold;">nonoka</span><br><span style="color: #1a5276; font-weight: bold;">因幡の白兔(Naoki)</span><br><span style="color: #d35400; font-weight: bold;">Shouki</span><br><span style="color: #27ae60; font-weight: bold;">かんちゃん</span></td>
+                </tr>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img" style="background: url(&#39;https://www.kurashiru.com/recipe_cards/382/original.jpg&#39;) center/cover;">
+                        </div>
+                        <div class="menu-name">Miso Soup</div>
+                        <div class="sub-name">(味噌汁)</div>
+                        <div style="margin-top: 8px;"><a href="https://www.kurashiru.com/recipes/56bf7c69-703f-4f91-96ce-77723daae258" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td><span class="none-text">(None)</span></td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Dried sardines
+                                    (niboshi)</span> — 125 g<br><span class="calculation">(5 g × 50 × 0.5 = 125 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Miso</span> — 25 tbsp (450 g)<br><span class="calculation">(1 tbsp × 50 × 0.5 = 25 tbsp → 25 × 18 g = 450 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #1a5276; font-weight: bold;">ちゅうがん きょうへい Kyohei</span>: Dried sardines (125 g)<br><span style="color: #1a5276; font-weight: bold;">宮谷健太</span>: Miso (450 g)</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">ちゅうがん きょうへい Kyohei</span><br><span style="color: #1a5276; font-weight: bold;">宮谷健太</span><br><span style="color: #d35400; font-weight: bold;">いくと</span></td>
+                </tr>
+                <tr>
+                    <td class="menu-cell">
+                        <div class="dish-img" style="background: url(&#39;https://image.excite.co.jp/jp/erecipe/recipe/e/9/e969019688be18d4076e012e87399061/8885b57f896b015f8e58f2735741870a.jpeg&#39;) center/cover;">
+                        </div>
+                        <div class="menu-name">Oshiruko</div>
+                        <div class="sub-name">(お汁粉)</div>
+                        <div style="margin-top: 8px;"><a href="https://www.kurashiru.com/recipes/80e1b3f3-3f25-4ecd-a849-d4561f2e8a6d" target="_blank" style="color: #d35400; text-decoration: none; font-size: 0.85em;">📖 レシピ</a></div>
+                    </td>
+                    <td><span class="none-text">(None)</span></td>
+                    <td>
+                        <ul>
+                            <li><span class="check-mark">✓</span><span class="item-title">Shiratamako</span> (glutinous
+                                rice flour) — 800 g (0.8 kg)<br><span class="calculation">(40 g × 50 × 0.5 × 0.8 = 800 g)</span></li>
+                            <li><span class="check-mark">✓</span><span class="item-title">Sweet red bean paste</span>
+                                (anko) — 2,000 g (2.0 kg)<br><span class="calculation">(100 g × 50 × 0.5 × 0.8 = 2,000 g)</span></li>
+                        </ul>
+                    </td>
+                    <td><span style="color: #d35400; font-weight: bold;">いくと</span>: Shiratamako (400 g)<br><span style="color: #1a5276; font-weight: bold;">Noa</span>: Shiratamako (400 g)<br><br><span style="color: #1a5276; font-weight: bold;">nonoka</span>: あんこ (1,000 g)<br><span style="color: #1a5276; font-weight: bold;">因幡の白兔(Naoki)</span>: あんこ (1,000 g)</td>
+                    <td><span style="color: #1a5276; font-weight: bold;">由貴</span><br><span style="color: #1a5276; font-weight: bold;">Noa</span><br><span style="color: #1a5276; font-weight: bold;">もこ</span></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
-</body>
 
-</html>
+
+</body></html>
